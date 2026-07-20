@@ -9,16 +9,16 @@
     <template v-if="showUser" #cell-user_email="{ value, row }">
       <div class="text-sm">
         <span class="text-gray-900 dark:text-white">{{ value || row.user_name || '#' + row.user_id }}</span>
-        <span v-if="row.user_notes" class="ml-1 text-xs text-gray-400">({{ row.user_notes }})</span>
+        <span v-if="row.user_notes" class="ml-1 text-xs text-gray-400 dark:text-gray-500">({{ row.user_notes }})</span>
       </div>
     </template>
     <template #cell-pay_amount="{ value, row }">
       <div class="text-sm">
         <span class="font-medium text-gray-900 dark:text-white">{{ paymentAmountSymbol(row) }}{{ value.toFixed(2) }}</span>
-        <span v-if="row.fee_rate > 0" class="ml-1 text-xs text-gray-400" :title="t('payment.orders.fee') + ': ' + row.fee_rate + '%'">
+        <span v-if="row.fee_rate > 0" class="ml-1 text-xs text-gray-400 dark:text-gray-500" :title="t('payment.orders.fee') + ': ' + row.fee_rate + '%'">
           ({{ t('payment.orders.fee') }} {{ row.fee_rate }}%)
         </span>
-        <div v-if="row.amount !== row.pay_amount" class="text-xs text-gray-500">
+        <div v-if="row.amount !== row.pay_amount" class="text-xs text-gray-500 dark:text-gray-400">
           {{ t('payment.orders.creditedAmount') }}: {{ creditedAmountSymbol }}{{ row.amount.toFixed(2) }}
         </div>
       </div>
