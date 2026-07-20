@@ -797,7 +797,70 @@ export default {
         validationRequired: '主题和 HTML 模板不能为空',
         empty: '暂无可用的邮件模板事件或语言。',
         noPreview: '刷新预览后查看渲染后的邮件主题。',
-        customized: '已自定义'
+        customized: '已自定义',
+        badgeOptional: '可退订通知',
+        badgeTransactional: '事务邮件',
+        categories: {
+          fallback: '通知',
+          auth: '认证安全',
+          subscription: '订阅',
+          billing: '计费',
+          admin: '管理告警',
+          risk_control: '风控',
+          ops: '运维'
+        },
+        events: {
+          auth_verify_code: {
+            label: '邮箱验证码',
+            timing: '注册、绑定邮箱、OAuth 补全邮箱或 TOTP 邮箱校验时发送。'
+          },
+          auth_password_reset: {
+            label: '密码重置',
+            timing: '用户请求密码重置链接时发送。'
+          },
+          notification_email_verify_code: {
+            label: '通知邮箱验证码',
+            timing: '用户添加并验证额外通知邮箱时发送。'
+          },
+          subscription_purchase_success: {
+            label: '订阅开通成功',
+            timing: '订阅订单完成支付并成功开通或续期后发送。'
+          },
+          subscription_expiry_reminder: {
+            label: '订阅到期提醒',
+            timing:
+              '后台任务在订阅仍有效且距离到期剩余 7 天、3 天、1 天时各发送一次，可通过邮件设置中的开关关闭。'
+          },
+          balance_low: {
+            label: '余额不足提醒',
+            timing: '用户余额低于全局或个人配置的提醒阈值时发送。'
+          },
+          balance_recharge_success: {
+            label: '余额充值成功',
+            timing: '余额充值订单支付完成并入账后发送。'
+          },
+          account_quota_alert: {
+            label: '账号限额告警',
+            timing: '上游账号的用量达到配置的额度告警阈值时发送给管理员通知邮箱。'
+          },
+          content_moderation_violation_notice: {
+            label: '内容审计违规提醒',
+            timing: '用户请求命中内容审计或风控规则、但尚未被禁用时发送。'
+          },
+          content_moderation_account_disabled: {
+            label: '内容审计禁用账号',
+            timing: '内容审计违规次数达到封禁阈值并自动禁用用户账号时发送。'
+          },
+          ops_alert: {
+            label: '运维告警',
+            timing: '运维监控规则触发告警并满足邮件通知配置时发送给运维收件人。'
+          },
+          ops_scheduled_report: {
+            label: '运维定时报表',
+            timing:
+              '运维日报、周报、错误摘要或账号健康报表到达配置的发送时间时发送；日报和周报的完整指标均可在模板中编辑。'
+          }
+        }
       },
       opsMonitoring: {
         title: '运维监控',

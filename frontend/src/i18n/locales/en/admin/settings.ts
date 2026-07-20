@@ -802,7 +802,77 @@ export default {
         validationRequired: 'Subject and HTML template are required',
         empty: 'No email template events or locales are available yet.',
         noPreview: 'Refresh the preview to see the rendered email subject.',
-        customized: 'Customized'
+        customized: 'Customized',
+        badgeOptional: 'Optional',
+        badgeTransactional: 'Transactional',
+        categories: {
+          fallback: 'Notification',
+          auth: 'Auth',
+          subscription: 'Subscription',
+          billing: 'Billing',
+          admin: 'Admin',
+          risk_control: 'Risk Control',
+          ops: 'Ops'
+        },
+        events: {
+          auth_verify_code: {
+            label: 'Email Verification Code',
+            timing:
+              'Sent for registration, email binding, OAuth pending email completion, or TOTP email verification.'
+          },
+          auth_password_reset: {
+            label: 'Password Reset',
+            timing: 'Sent when a user requests a password reset link.'
+          },
+          notification_email_verify_code: {
+            label: 'Notification Email Verification',
+            timing: 'Sent when a user adds and verifies an extra notification email address.'
+          },
+          subscription_purchase_success: {
+            label: 'Subscription Activated',
+            timing:
+              'Sent after a subscription order is paid and the subscription is activated or extended.'
+          },
+          subscription_expiry_reminder: {
+            label: 'Subscription Expiry Reminder',
+            timing:
+              'Sent by the background job when an active subscription has 7, 3, or 1 day remaining. It can be disabled in Email settings.'
+          },
+          balance_low: {
+            label: 'Low Balance Alert',
+            timing:
+              "Sent when a user's balance drops below the global or personal reminder threshold."
+          },
+          balance_recharge_success: {
+            label: 'Balance Recharge Success',
+            timing: 'Sent after a balance recharge order is paid and credited.'
+          },
+          account_quota_alert: {
+            label: 'Account Quota Alert',
+            timing:
+              'Sent to admin notification emails when an upstream account reaches the configured quota alert threshold.'
+          },
+          content_moderation_violation_notice: {
+            label: 'Risk Control Violation Notice',
+            timing:
+              'Sent when a user request triggers content moderation or risk-control rules but the account is not disabled yet.'
+          },
+          content_moderation_account_disabled: {
+            label: 'Risk Control Account Disabled',
+            timing:
+              'Sent when content moderation reaches the ban threshold and automatically disables the user account.'
+          },
+          ops_alert: {
+            label: 'Ops Alert',
+            timing:
+              'Sent to ops recipients when an ops monitoring rule fires and email notification settings allow it.'
+          },
+          ops_scheduled_report: {
+            label: 'Ops Scheduled Report',
+            timing:
+              'Sent when a configured daily, weekly, error digest, or account health report reaches its scheduled send time. Every daily and weekly summary metric is editable in this template.'
+          }
+        }
       },
       opsMonitoring: {
         title: 'Ops Monitoring',
