@@ -107,7 +107,8 @@ describe('BulkEditAccountModal', () => {
     expect(mappingTab).toBeTruthy()
     await mappingTab!.trigger('click')
 
-    expect(wrapper.text()).toContain('3.1-Flash-Image透传')
+    // 透传预设：label 追加 i18n 后缀（测试中 t 直接返回 key）
+    expect(wrapper.text()).toContain('3.1-Flash-Imagecommon.passthroughLabelSuffix')
     expect(wrapper.text()).toContain('3-Pro-Image→3.1')
     expect(wrapper.text()).not.toContain('GPT-5.3 Codex Spark')
   })

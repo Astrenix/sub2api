@@ -1065,7 +1065,7 @@
               @click="addAntigravityPresetMapping(preset.from, preset.to)"
               :class="['rounded-lg px-3 py-1 text-xs transition-colors', preset.color]"
             >
-              + {{ preset.label }}
+              + {{ preset.label }}{{ preset.passthrough ? t('common.passthroughLabelSuffix') : '' }}
             </button>
           </div>
         </div>
@@ -1349,7 +1349,7 @@
                   @click="addPresetMapping(preset.from, preset.to)"
                   :class="['rounded-lg px-3 py-1 text-xs transition-colors', preset.color]"
                 >
-                  + {{ preset.label }}
+                  + {{ preset.label }}{{ preset.passthrough ? t('common.passthroughLabelSuffix') : '' }}
                 </button>
               </div>
             </div>
@@ -2140,7 +2140,7 @@
                 @click="addPresetMapping(preset.from, preset.to)"
                 :class="['rounded-lg px-3 py-1 text-xs transition-colors', preset.color]"
               >
-                + {{ preset.label }}
+                + {{ preset.label }}{{ preset.passthrough ? t('common.passthroughLabelSuffix') : '' }}
               </button>
             </div>
           </div>
